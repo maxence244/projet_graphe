@@ -39,7 +39,7 @@ namespace projet
 
 
         /// <summary>
-        /// Initialise l'interface utilisateur avec les composants nécessaires.
+        /// Initialise l'interface utilisateur avec les composants nÃ©cessaires.
         /// </summary>
         private void InitialiserInterfaceUtilisateur()
         {
@@ -48,8 +48,8 @@ namespace projet
             this.Size = new Size(1200, 800);
             this.Paint += new PaintEventHandler(Form1_Paint);
 
-            // Zone pour afficher les résultats des parcours
-            _etiquetteResultat = CreerEtiquette("Résultats des Parcours :", new Point(850, 10), new Font("Arial", 12, FontStyle.Bold));
+            // Zone pour afficher les rÃ©sultats des parcours
+            _etiquetteResultat = CreerEtiquette("RÃ©sultats des Parcours :", new Point(850, 10), new Font("Arial", 12, FontStyle.Bold));
 
             // Champs de texte pour les parcours et le chemin le plus court
             _noeudDepartParcoursLargeur = CreerTextBox(new Point(850, 60));
@@ -57,40 +57,40 @@ namespace projet
             _noeudDepartCheminCourt = CreerTextBox(new Point(850, 160));
             _noeudArriveeCheminCourt = CreerTextBox(new Point(970, 160));
 
-            // Étiquettes pour les champs de texte
-            CreerEtiquette("Départ Parcours Largeur:", new Point(850, 40));
-            CreerEtiquette("Départ Parcours Profondeur:", new Point(850, 90));
-            CreerEtiquette("Départ Chemin Court:", new Point(850, 140));
-            CreerEtiquette("Arrivée Chemin Court:", new Point(970, 140));
+            // Ã‰tiquettes pour les champs de texte
+            CreerEtiquette("DÃ©part Parcours Largeur:", new Point(850, 40));
+            CreerEtiquette("DÃ©part Parcours Profondeur:", new Point(850, 90));
+            CreerEtiquette("DÃ©part Chemin Court:", new Point(850, 140));
+            CreerEtiquette("ArrivÃ©e Chemin Court:", new Point(970, 140));
 
-            // Boutons pour les différentes fonctionnalités
-            _boutonVerifierConnexite = CreerBouton("Vérifier Connexité", new Point(850, 200), BoutonVerifierConnexite_Click);
+            // Boutons pour les diffÃ©rentes fonctionnalitÃ©s
+            _boutonVerifierConnexite = CreerBouton("VÃ©rifier ConnexitÃ©", new Point(850, 200), BoutonVerifierConnexite_Click);
             _boutonParcoursLargeur = CreerBouton("Parcours Largeur", new Point(850, 250), BoutonParcoursLargeur_Click);
             _boutonParcoursProfondeur = CreerBouton("Parcours Profondeur", new Point(850, 300), BoutonParcoursProfondeur_Click);
             _boutonCheminCourt = CreerBouton("Chemin Court", new Point(850, 350), BoutonCheminCourt_Click);
-            _boutonReinitialiser = CreerBouton("Réinitialiser", new Point(850, 400), BoutonReinitialiser_Click);
+            _boutonReinitialiser = CreerBouton("RÃ©initialiser", new Point(850, 400), BoutonReinitialiser_Click);
             _boutonAfficherListeAdjacence = CreerBouton("Afficher Liste d'Adjacence", new Point(850, 450), BoutonAfficherListeAdjacence_Click);
             _boutonAfficherMatriceAdjacence = CreerBouton("Afficher Matrice d'Adjacence", new Point(850, 500), BoutonAfficherMatriceAdjacence_Click);
 
-            // Zone pour afficher les résultats des parcours
-            _zoneTexteResultat = CreerZoneTexte(new Point(1200, 20), new Size(600, 700));
+            // Zone pour afficher les rÃ©sultats des parcours
+            _zoneTexteResultat = CreerZoneTexte(new Point(1280, 20), new Size(600, 700));
 
-            // Étiquettes pour afficher les informations du graphe
+            // Ã‰tiquettes pour afficher les informations du graphe
             _etiquetteOrdre = CreerEtiquette("Ordre du graphe : ", new Point(850, 550));
             _etiquetteTaille = CreerEtiquette("Taille du graphe : ", new Point(850, 570));
 
-            // Mettre à jour les étiquettes avec les informations du graphe
+            // Mettre Ã  jour les Ã©tiquettes avec les informations du graphe
             MettreAJourEtiquettesGraphe();
         }
 
 
         /// <summary>
-        /// Crée une étiquette avec les propriétés spécifiées.
+        /// CrÃ©e une Ã©tiquette avec les propriÃ©tÃ©s spÃ©cifiÃ©es.
         /// </summary>
-        /// <param name="texte">Le texte de l'étiquette.</param>
-        /// <param name="position">La position de l'étiquette.</param>
-        /// <param name="font">La police de l'étiquette.</param>
-        /// <returns>L'étiquette créée.</returns>
+        /// <param name="texte">Le texte de l'Ã©tiquette.</param>
+        /// <param name="position">La position de l'Ã©tiquette.</param>
+        /// <param name="font">La police de l'Ã©tiquette.</param>
+        /// <returns>L'Ã©tiquette crÃ©Ã©e.</returns>
         private Label CreerEtiquette(string texte, Point position, Font font = null)
         {
             Label etiquette = new Label
@@ -106,12 +106,12 @@ namespace projet
 
 
         /// <summary>
-        /// Crée un bouton avec les propriétés spécifiées.
+        /// CrÃ©e un bouton avec les propriÃ©tÃ©s spÃ©cifiÃ©es.
         /// </summary>
         /// <param name="texte">Le texte du bouton.</param>
         /// <param name="position">La position du bouton.</param>
-        /// <param name="gestionnaireClic">Le gestionnaire d'événements pour le clic du bouton.</param>
-        /// <returns>Le bouton créé.</returns>
+        /// <param name="gestionnaireClic">Le gestionnaire d'Ã©vÃ©nements pour le clic du bouton.</param>
+        /// <returns>Le bouton crÃ©Ã©.</returns>
         private Button CreerBouton(string texte, Point position, EventHandler gestionnaireClic)
         {
             Button bouton = new Button
@@ -127,11 +127,11 @@ namespace projet
         }
 
         /// <summary>
-        /// Crée une zone de texte avec les propriétés spécifiées.
+        /// CrÃ©e une zone de texte avec les propriÃ©tÃ©s spÃ©cifiÃ©es.
         /// </summary>
         /// <param name="position">La position de la zone de texte.</param>
         /// <param name="taille">La taille de la zone de texte.</param>
-        /// <returns>La zone de texte créée.</returns>
+        /// <returns>La zone de texte crÃ©Ã©e.</returns>
         private TextBox CreerTextBox(Point position, Size taille = default)
         {
             TextBox textBox = new TextBox
@@ -145,11 +145,11 @@ namespace projet
 
 
         /// <summary>
-        /// Crée une zone de texte multiligne pour afficher les résultats.
+        /// CrÃ©e une zone de texte multiligne pour afficher les rÃ©sultats.
         /// </summary>
         /// <param name="position">La position de la zone de texte.</param>
         /// <param name="taille">La taille de la zone de texte.</param>
-        /// <returns>La zone de texte créée.</returns>
+        /// <returns>La zone de texte crÃ©Ã©e.</returns>
         private TextBox CreerZoneTexte(Point position, Size taille)
         {
             TextBox textBox = new TextBox
@@ -167,7 +167,7 @@ namespace projet
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Vérifier Connexité".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "VÃ©rifier ConnexitÃ©".
         /// </summary>
         private void BoutonVerifierConnexite_Click(object sender, EventArgs e)
         {
@@ -178,49 +178,49 @@ namespace projet
             }
             else
             {
-                MessageBox.Show("Le graphe n'est pas initialisé.");
+                MessageBox.Show("Le graphe n'est pas initialisÃ©.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Parcours Largeur".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "Parcours Largeur".
         /// </summary>
         private void BoutonParcoursLargeur_Click(object sender, EventArgs e)
         {
             if (_graphe != null && int.TryParse(_noeudDepartParcoursLargeur.Text, out int noeudDepartLargeur))
             {
                 var cheminLargeur = _graphe.ParcoursLargeur(noeudDepartLargeur);
-                _zoneTexteResultat.Text += $"Chemin Parcours Largeur (départ {noeudDepartLargeur}) : {string.Join(" -> ", cheminLargeur)}\n";
+                _zoneTexteResultat.Text += $"Chemin Parcours Largeur (dÃ©part {noeudDepartLargeur}) : {string.Join(" -> ", cheminLargeur)}\n";
                 _visualiseur.Dessiner(CreateGraphics());
             }
             else
             {
-                MessageBox.Show("Veuillez entrer une valeur valide pour le nœud de départ Parcours Largeur.");
+                MessageBox.Show("Veuillez entrer une valeur valide pour le nÂœud de dÃ©part Parcours Largeur.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Parcours Profondeur".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "Parcours Profondeur".
         /// </summary>
         private void BoutonParcoursProfondeur_Click(object sender, EventArgs e)
         {
             if (_graphe != null && int.TryParse(_noeudDepartParcoursProfondeur.Text, out int noeudDepartProfondeur))
             {
                 var cheminProfondeur = _graphe.ParcoursProfondeur(noeudDepartProfondeur);
-                _zoneTexteResultat.Text += $"Chemin Parcours Profondeur (départ {noeudDepartProfondeur}) : {string.Join(" -> ", cheminProfondeur)}\n";
+                _zoneTexteResultat.Text += $"Chemin Parcours Profondeur (dÃ©part {noeudDepartProfondeur}) : {string.Join(" -> ", cheminProfondeur)}\n";
                 _visualiseur.Dessiner(CreateGraphics());
             }
             else
             {
-                MessageBox.Show("Veuillez entrer une valeur valide pour le nœud de départ Parcours Profondeur.");
+                MessageBox.Show("Veuillez entrer une valeur valide pour le nÂœud de dÃ©part Parcours Profondeur.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Chemin Court".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "Chemin Court".
         /// </summary>
         private void BoutonCheminCourt_Click(object sender, EventArgs e)
         {
@@ -231,8 +231,8 @@ namespace projet
                 {
                     foreach (var lien in _graphe.Liens)
                     {
-                        lien.Couleur = Color.Black; // Réinitialiser la couleur
-                        lien.Largeur = 1; // Réinitialiser la largeur
+                        lien.Couleur = Color.Black; // RÃ©initialiser la couleur
+                        lien.Largeur = 1; // RÃ©initialiser la largeur
                     }
 
                     for (int i = 0; i < cheminCourt.Count - 1; i++)
@@ -248,23 +248,23 @@ namespace projet
                         }
                     }
 
-                    _zoneTexteResultat.Text += $"Chemin court de {noeudDepartCourt} à {noeudArriveeCourt} : {string.Join(" -> ", cheminCourt)}\n";
+                    _zoneTexteResultat.Text += $"Chemin court de {noeudDepartCourt} Ã  {noeudArriveeCourt} : {string.Join(" -> ", cheminCourt)}\n";
                     _visualiseur.Dessiner(CreateGraphics());
                 }
                 else
                 {
-                    _zoneTexteResultat.Text += "Aucun chemin trouvé.\n";
+                    _zoneTexteResultat.Text += "Aucun chemin trouvÃ©.\n";
                 }
             }
             else
             {
-                MessageBox.Show("Veuillez entrer des valeurs valides pour les nœuds de départ et d'arrivée.");
+                MessageBox.Show("Veuillez entrer des valeurs valides pour les nÂœuds de dÃ©part et d'arrivÃ©e.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Réinitialiser".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "RÃ©initialiser".
         /// </summary>
         private void BoutonReinitialiser_Click(object sender, EventArgs e)
         {
@@ -272,21 +272,21 @@ namespace projet
             {
                 foreach (var lien in _graphe.Liens)
                 {
-                    lien.Couleur = Color.Black; // Réinitialiser la couleur
-                    lien.Largeur = 1; // Réinitialiser la largeur
+                    lien.Couleur = Color.Black; // RÃ©initialiser la couleur
+                    lien.Largeur = 1; // RÃ©initialiser la largeur
                 }
                 _zoneTexteResultat.Clear();
                 _visualiseur.Dessiner(CreateGraphics());
             }
             else
             {
-                MessageBox.Show("Le graphe n'est pas initialisé.");
+                MessageBox.Show("Le graphe n'est pas initialisÃ©.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Afficher Liste d'Adjacence".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "Afficher Liste d'Adjacence".
         /// </summary>
         private void BoutonAfficherListeAdjacence_Click(object sender, EventArgs e)
         {
@@ -301,13 +301,13 @@ namespace projet
             }
             else
             {
-                MessageBox.Show("Le graphe n'est pas initialisé.");
+                MessageBox.Show("Le graphe n'est pas initialisÃ©.");
             }
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le bouton "Afficher Matrice d'Adjacence".
+        /// Gestionnaire d'Ã©vÃ©nements pour le bouton "Afficher Matrice d'Adjacence".
         /// </summary>
         private void BoutonAfficherMatriceAdjacence_Click(object sender, EventArgs e)
         {
@@ -327,13 +327,13 @@ namespace projet
             }
             else
             {
-                MessageBox.Show("Le graphe n'est pas initialisé.");
+                MessageBox.Show("Le graphe n'est pas initialisÃ©.");
             }
         }
 
 
         /// <summary>
-        /// Initialise le graphe avec des nœuds et des liens prédéfinis.
+        /// Initialise le graphe avec des nÂœuds et des liens prÃ©dÃ©finis.
         /// </summary>
         private void InitialiserGraphe()
         {
@@ -380,13 +380,13 @@ namespace projet
             Point centre = new Point(this.ClientSize.Width / 2 - 200, this.ClientSize.Height / 2);
             _visualiseur = new VisualiseurGraphe(_graphe, rayon, centre);
 
-            // Mettre à jour les étiquettes avec les informations du graphe
+            // Mettre Ã  jour les Ã©tiquettes avec les informations du graphe
             MettreAJourEtiquettesGraphe();
         }
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour la peinture du formulaire.
+        /// Gestionnaire d'Ã©vÃ©nements pour la peinture du formulaire.
         /// </summary>
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -398,7 +398,7 @@ namespace projet
 
 
         /// <summary>
-        /// Gestionnaire d'événements pour le chargement du formulaire.
+        /// Gestionnaire d'Ã©vÃ©nements pour le chargement du formulaire.
         /// </summary>
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -407,7 +407,7 @@ namespace projet
 
 
         /// <summary>
-        /// Met à jour les étiquettes avec les informations du graphe.
+        /// Met Ã  jour les Ã©tiquettes avec les informations du graphe.
         /// </summary>
         private void MettreAJourEtiquettesGraphe()
         {
@@ -418,8 +418,8 @@ namespace projet
             }
             else
             {
-                _etiquetteOrdre.Text = "Ordre du graphe : Non initialisé";
-                _etiquetteTaille.Text = "Taille du graphe : Non initialisé";
+                _etiquetteOrdre.Text = "Ordre du graphe : Non initialisÃ©";
+                _etiquetteTaille.Text = "Taille du graphe : Non initialisÃ©";
             }
         }
     }
