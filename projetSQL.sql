@@ -179,89 +179,89 @@ CREATE TABLE avis_post_commande(
 
 
 -- Ajout de Clients Individuels
-INSERT INTO Client_Individuel (id_client_, pref_alimentaire) VALUES
+INSERT INTO Client_Individuel  VALUES
 ('C1', 'Végétarien'),
 ('C2', 'Sans gluten'),
 ('C3', 'Halal');
 
 -- Ajout de Cuisiniers
-INSERT INTO Cuisinier (id_cuisinier_, spe_cuisine, année_exp, certif, note_moyenne, nb_livraison, id_commande_) VALUES
+INSERT INTO Cuisinier VALUES
 ('CU1', 'Italienne', 5, 'Certificat A', 4.5, 30, NULL),
 ('CU2', 'Japonaise', 10, 'Certificat B', 4.8, 50, NULL),
 ('CU3', 'Française', 7, 'Certificat C', 4.2, 40, NULL);
 
 -- Ajout d'Entreprises
-INSERT INTO Entreprise (id_entreprise, nom_entreprise, SIRET, mail_entreprise, tel_entreprise) VALUES
+INSERT INTO Entreprise VALUES
 ('E1', 'RestoRapide', 123456789, 'contact@restorapide.com', 987654321),
 ('E2', 'SaveursDuMonde', 987654321, 'info@saveursdumonde.com', 123456789);
 
 -- Ajout de Livraisons
-INSERT INTO Livraison_ (id_livraison, distance_km, temps_estime, chemin_suivi, statut) VALUES
+INSERT INTO Livraison_ VALUES
 ('L1', 5.2, 15, 'Rue des Oliviers', 'En cours'),
 ('L2', 12.0, 30, 'Avenue du Général', 'Livré');
 
 -- Ajout de Commandes
-INSERT INTO Commande (id_commande_, date_commande_, prix_total, statut, paiment, historique, id_livraison, id_client_, id_entreprise) VALUES
+INSERT INTO Commande VALUES
 ('CMD1', '2025-02-25', 35.50, 'Livré', 'Carte bancaire', 'Commande réussie', 'L1', 'C1', 'E1'),
 ('CMD2', '2025-02-26', 50.00, 'En cours', 'PayPal', 'En attente', 'L2', 'C2', 'E2');
 
 -- Ajout de Recettes
-INSERT INTO recette (id_recette, régime_alimentaire, nationalité, nom_recette, type) VALUES
+INSERT INTO recette VALUES
 ('R1', 'Végétarien', 'Française', 'Quiche Lorraine', 'Plat Principal'),
 ('R2', 'Sans gluten', 'Italienne', 'Pizza Margherita', 'Plat Principal');
 
 -- Ajout de Plats
-INSERT INTO Plat (id_plat, prix, date_fabrication, date_péremption, quantité, id_recette) VALUES  
+INSERT INTO Plat VALUES  
 ('P1', 15.00, '2025-02-24', '2025-02-28', 10, 'R1'),  
 ('P2', 12.50, '2025-02-23', '2025-02-27', 5, 'R2');
 
 
 -- Ajout d'Ingrédients
-INSERT INTO Ingrédient (id_ingrédients, nom_ingrédient, allergène, type, quantité_alim) VALUES
+INSERT INTO Ingrédient VALUES
 ('I1', 'Tomate', 'Aucun', 'Légume', 100),
 ('I2', 'Fromage', 'Lactose', 'Produit laitier', 50),
 ('I3', 'Pain pita', 'Gluten', 'Céréale', 30);
 
 -- Ajout de Stations de Métro
-INSERT INTO métro (id_station, nom_station, ligne, id_livraison) VALUES
+INSERT INTO métro VALUES
 ('M1', 'Opéra', 'Ligne 1', 'L1'),
 ('M2', 'Bastille', 'Ligne 5', 'L2');
 
 -- Ajout de Paiements
-INSERT INTO paiement (id_paiement, montant, moyent_paiement, date_paiement, id_commande_) VALUES
+INSERT INTO paiement VALUES
 ('PAY1', 35.50, 'Carte bancaire', '2025-02-25', 'CMD1'),
 ('PAY2', 50.00, 'PayPal', '2025-02-26', 'CMD2');
 
 -- Ajout d'Avis post-commande (Client → Cuisinier)
-INSERT INTO avis_post_commande (id_client_, id_cuisinier_, nb_étoile, commentaire, date_avis) VALUES
+INSERT INTO avis_post_commande VALUES
 ('C1', 'CU1', 5, 'Excellent plat !', '2025-02-26'),
 ('C2', 'CU2', 4, 'Très bon mais un peu épicé', '2025-02-27');
 
 -- Ajout d'Individus
-INSERT INTO Individu (id_1, prenom, nom, email, telephone, id_cuisinier_, id_client_, id_entreprise) VALUES
+INSERT INTO Individu VALUES
 ('I1', 'Alice', 'Durand', 'alice.durand@mail.com', 123456789, 'CU1', 'C1', 'E1'),
 ('I2', 'Marc', 'Leroy', 'marc.leroy@mail.com', 987654321, 'CU2', 'C2', 'E2');
 
 -- Ajout d'Adresses
-INSERT INTO Adresse (id_adresse, rue, ville, code_postal, pays, type_adresse, numéro, id_1) VALUES
+INSERT INTO Adresse VALUES
 ('A1', 'Rue de Rivoli', 'Paris', 75001, 'France', 'Domicile', 12, 'I1'),
 ('A2', 'Avenue des Champs', 'Paris', 75008, 'France', 'Travail', 45, 'I2');
 
 -- Ajout des relations entre les tables associatives
-INSERT INTO composée (id_ingrédients, id_recette) VALUES
+INSERT INTO composée VALUES
 ('I1', 'R1'),
 ('I2', 'R1'),
 ('I3', 'R2');
 
-INSERT INTO contient (id_plat, adresse, id_commande_) VALUES
+INSERT INTO contient VALUES
 ('P1', 'A1', 'CMD1'),
 ('P2', 'A2', 'CMD2');
 
-INSERT INTO Fait (id_cuisinier_, id_livraison) VALUES
+INSERT INTO Fait VALUES
 ('CU1', 'L1'),
 ('CU2', 'L2');
 
-INSERT INTO est_dans_ (id_livraison, id_plat) VALUES
+INSERT INTO est_dans_ VALUES
 ('L1', 'P1'),
 ('L2', 'P2');
 
